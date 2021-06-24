@@ -1,0 +1,20 @@
+steps:
+1. station (client) submit new order
+   - view history
+   - update daily sales
+2. staffs (company) receive order
+   - tickbox for payment
+
+check balance oil first, before order
+
+
+FLOWCHART:
+
+LOGIN PAGE ---smart---> INVENTORY (view orders, mark completion)
+   |
+  station ---,-------> view history
+   |         |
+   V         V
+update    create new order
+daily
+sales
