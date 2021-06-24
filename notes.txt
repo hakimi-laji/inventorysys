@@ -10,11 +10,15 @@ check balance oil first, before order
 
 FLOWCHART:
 
+
 LOGIN PAGE ---smart---> INVENTORY (view orders, mark completion)
    |
-  station ---,-------> view history
-   |         |
-   V         V
-update    create new order
+   |-----REGISTER
+   |________|
+   |
+  station ---------,-------> view history
+   |               |
+   V               V
+update       create new order
 daily
 sales
