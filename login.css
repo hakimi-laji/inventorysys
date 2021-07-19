@@ -1,0 +1,233 @@
+/* edit for header part */
+header{
+    padding : 10px;
+    background-color: rgba(255, 255, 255, 0.322);
+    
+}
+
+.logo{
+    border-radius: auto;
+    vertical-align: middle;
+    width: 70px;
+    height: 60px;
+}
+
+.welcome{
+    
+    position :absolute;
+    top: 20px;
+    left: 99px;
+    font-size: 22px;
+    color: rgb(0, 0, 0);
+      
+}
+
+.station{
+    position :absolute;
+    top: 50px;
+    left: 99px;
+    font-size: 23px;
+}
+
+.logout{
+    position :absolute;
+    top: 50px;
+    right: 16px;
+    display: inline-block;
+    padding: 5px 15px;
+    font-size: 14px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #0fa1e6b4;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px #999
+}
+
+
+body{
+    background-image: url('bg.jpg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    
+    
+}
+
+h4{
+    height : 40px 40px;
+}
+  
+ /* edit for navi bar */
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #109e9e98;
+    text-align: center;
+    
+}
+
+
+/* Style the buttons inside the navi bar or tab*/
+
+.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+    margin-top: 0rem;
+}
+
+
+/* Change background color of buttons on hover */
+
+.tab button:hover {
+    background-color: rgba(194, 194, 194, 0.719);
+}
+
+
+/* Create an active/current tablink class */
+
+.tab button.active {
+    background-color: rgba(212, 207, 207, 0.596);
+}
+
+
+/* Style the tab content */
+
+.tabcontent {
+    display: none;
+    padding: 30px 12px;
+    background-color: #f7f7f7fd;
+    border: 1px solid black;
+    border-top: none;
+}
+
+.tg {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+}
+
+.tg td {
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    overflow: hidden;
+    padding: 10px 5px;
+    word-break: normal;
+}
+
+.tg th {
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    overflow: hidden;
+    padding: 10px 5px;
+    word-break: normal;
+    background-color: #838a8ab6;
+}
+
+.tg .tg-0lax {
+    text-align: left;
+    vertical-align: top;
+}
+
+/*design for all button */
+.button {
+    background-color: #80ffff;
+    border: none;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+}
+
+.button1 {
+    border-radius: 12px;
+    display: inline-block;
+}
+
+.button-update {
+    background-color: #06dd8b;
+    color: white;
+    padding: 4px 10px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: center;
+}
+
+.button-delete {
+    background-color: #f102028f;
+    color: white;
+    padding: px 10px;
+    margin: 2px 0;
+    border: none;
+    cursor: pointer;
+    width: center;
+}
+
+/*register page*/
+
+input[type=text],
+input[type=password] {
+    width: 40%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.button-register {
+    background-color: #06dd8b;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: center;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+.container {
+    padding: 16px;
+}
+
+
+/* Change styles for span and cancel button on extra small screens */
+
+@media screen and (max-width: 300px) {
+    span.psw {
+        display: block;
+        float: none;
+    }
+}
+
+.box{
+    width: 180px;
+    height: 17px; 
+    top: 40px;
+    right : 90px;
+}

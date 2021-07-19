@@ -8,7 +8,7 @@ include("authenticator.php");
 	$date = date("Y-m-d");
 	
 	// Performing insert query execution
-	$sql = "INSERT INTO orderlist (user,date,orderdate,ronquantity,ronprice,ronamount,ronstock,ronaverage,dslquantity,dslprice,dslamount,dslstock,dslaverage) VALUES ('$username','$date','$orderdate','$ronquantity','$ronprice','$ronamount','$ronstock','$ronaverage','$dslquantity','$dslprice','$dslamount','$dslstock','$dslaverage')";
+	$sql = "INSERT INTO orderlist (user,date,orderdate,ronquantity,dslquantity) VALUES ('$username','$date','$orderdate','$ronquantity','$dslquantity')";
 	
 	if(mysqli_query($conn, $sql)){
 		echo "<h3>data stored in a database successfully."

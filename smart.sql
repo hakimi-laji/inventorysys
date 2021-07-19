@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 25, 2021 at 08:58 AM
+-- Generation Time: Jul 01, 2021 at 05:29 PM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 8.0.3
 
@@ -24,6 +24,59 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `client`
+--
+
+CREATE TABLE `client` (
+  `id` tinyint(5) NOT NULL,
+  `client` varchar(255) NOT NULL,
+  `station` varchar(255) NOT NULL,
+  `ronmax` int(25) NOT NULL,
+  `dslmax` int(25) NOT NULL,
+  `roncurrent` int(25) NOT NULL,
+  `dslcurrent` int(25) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `client`
+--
+
+INSERT INTO `client` (`id`, `client`, `station`, `ronmax`, `dslmax`, `roncurrent`, `dslcurrent`) VALUES
+(5, 'none', 'no station', 333, 222, 75, 40),
+(6, 'ganu', 'kuala tganu', 200, 100, 140, 80),
+(7, 'ali', 'jalan raya', 100, 80, 95, 75);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `dailylog`
+--
+
+CREATE TABLE `dailylog` (
+  `id` tinyint(5) NOT NULL,
+  `client` varchar(255) NOT NULL,
+  `date` varchar(50) NOT NULL,
+  `ronsales` int(11) NOT NULL,
+  `dslsales` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `dailylog`
+--
+
+INSERT INTO `dailylog` (`id`, `client`, `date`, `ronsales`, `dslsales`) VALUES
+(8, 'none', '2021-06-28', 12, 2),
+(9, 'none', '2021-06-28', 21, 120),
+(10, 'none', '2021-06-28', 25, 0),
+(11, 'none', '2021-06-28', 25, 55),
+(12, 'ganu', '2021-06-28', 50, 10),
+(13, 'ganu', '2021-06-28', 10, 10),
+(14, 'ali', '2021-06-28', 5, 5),
+(15, 'none', '2021-06-30', 200, 5);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `orderlist`
 --
 
@@ -35,23 +88,22 @@ CREATE TABLE `orderlist` (
   `ronquantity` int(255) NOT NULL,
   `ronprice` int(255) NOT NULL,
   `ronamount` int(255) NOT NULL,
-  `ronstock` int(255) NOT NULL,
-  `ronaverage` int(255) NOT NULL,
   `dslquantity` int(255) NOT NULL,
   `dslprice` int(255) NOT NULL,
   `dslamount` int(255) NOT NULL,
-  `dslstock` int(255) NOT NULL,
-  `dslaverage` int(255) NOT NULL
+  `status` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `orderlist`
 --
 
-INSERT INTO `orderlist` (`id`, `user`, `date`, `orderdate`, `ronquantity`, `ronprice`, `ronamount`, `ronstock`, `ronaverage`, `dslquantity`, `dslprice`, `dslamount`, `dslstock`, `dslaverage`) VALUES
-(4, 'felda', '2021-06-24', '2021-06-27', 234234, 234, 0, 0, 0, 0, 523, 0, 0, 23),
-(6, 'qwe', '2021-06-25', '2021-06-25', 555, 555, 0, 0, 0, 0, 0, 555, 555, 123),
-(7, 'felda', '2021-06-25', '2021-09-27', 999, 999, 999, 999, 999, 999, 999, 999, 999, 999);
+INSERT INTO `orderlist` (`id`, `user`, `date`, `orderdate`, `ronquantity`, `ronprice`, `ronamount`, `dslquantity`, `dslprice`, `dslamount`, `status`) VALUES
+(11, 'ali', '2021-06-28', '2021-06-27', 1, 10, 10, 1, 20, 20, 'wait'),
+(13, 'none', '2021-06-30', '2021-06-09', 200, 10, 2000, 180, 5, 900, 'wait'),
+(14, 'none', '2021-07-01', '2021-07-01', 0, 0, 0, 0, 0, 0, 'pass'),
+(15, 'none', '2021-07-01', '2021-07-01', 10, 0, 0, 10, 0, 0, ''),
+(16, 'none', '2021-07-01', '2021-07-15', 58, 0, 0, 82, 0, 0, '');
 
 -- --------------------------------------------------------
 
@@ -62,7 +114,6 @@ INSERT INTO `orderlist` (`id`, `user`, `date`, `orderdate`, `ronquantity`, `ronp
 CREATE TABLE `user` (
   `id` tinyint(5) NOT NULL,
   `username` varchar(255) NOT NULL,
-  `station` varchar(255) NOT NULL,
   `password` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -70,20 +121,27 @@ CREATE TABLE `user` (
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id`, `username`, `station`, `password`) VALUES
-(1, 'admin', 'station', 'admin'),
-(2, 'felda', 'station', '123'),
-(3, 'qwe', 'qwe sad', '111'),
-(4, 'test', '', 'test'),
-(5, 'shitstation', '', 'asd'),
-(6, 'real', 'real shit', 'qwe'),
-(7, 'popo', 'qwe', 'qqq'),
-(8, 'hai', 'hai', 'hi'),
-(11, 'ali', 'bukit payong', '123');
+INSERT INTO `user` (`id`, `username`, `password`) VALUES
+(1, 'admin', 'admin'),
+(19, 'none', '111'),
+(20, 'ganu', '123'),
+(21, 'ali', '123');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `client`
+--
+ALTER TABLE `client`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `dailylog`
+--
+ALTER TABLE `dailylog`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `orderlist`
@@ -102,16 +160,28 @@ ALTER TABLE `user`
 --
 
 --
+-- AUTO_INCREMENT for table `client`
+--
+ALTER TABLE `client`
+  MODIFY `id` tinyint(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `dailylog`
+--
+ALTER TABLE `dailylog`
+  MODIFY `id` tinyint(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+
+--
 -- AUTO_INCREMENT for table `orderlist`
 --
 ALTER TABLE `orderlist`
-  MODIFY `id` tinyint(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` tinyint(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` tinyint(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` tinyint(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
